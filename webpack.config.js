@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -10,8 +11,9 @@ module.exports = {
         clean: true,
     },
     plugins: [
+        new webpack.ProgressPlugin(),
         new HtmlWebpackPlugin({
-            title: 'Caching',
+            template: path.resolve(__dirname, 'public', 'index.html')
         }),
     ],
 };
