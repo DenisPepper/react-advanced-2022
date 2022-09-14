@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/DenisPepper/react-advanced-2022#readme",
   "devDependencies": {
+    "@types/node": "^17.0.21",
     "html-webpack-plugin": "^5.5.0",
     "ts-loader": "^9.2.6",
     "ts-node": "^10.5.0",
