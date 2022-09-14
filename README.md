@@ -8,3 +8,5 @@ https://webpack.js.org/configuration/configuration-languages/
 1.2 install type definitions for Node.js
 
 1.3 installed type definitions for webpack 
+
+1.4 modified tsconfig.json & webpack.config.ts for use native import/export ES syntax
