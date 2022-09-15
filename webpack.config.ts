@@ -1,22 +1,19 @@
 import path from 'path';
 import webpack from 'webpack';
-import { getPlugins } from './config/build/plugins';
-import { getLoaders } from "./config/build/loaders";
-import { getResolvers } from "./config/build/resolvers";
+import {getWebpackBuildConfig} from "./config/build/build-config";
 
-const config: webpack.Configuration = {
-    mode: 'development',
-    entry: path.resolve(__dirname, 'src', 'index.ts'),
-    output: {
-        filename: '[name].[contenthash].js',
-        path: path.resolve(__dirname, 'build'),
-        clean: true,
-    },
-    plugins: getPlugins(),
-    module: {
-        rules: getLoaders(),
-    },
-    resolve: getResolvers(),
+enum WebpackRunMode {
+    Production = 'production',
+    Development = 'development'
 };
+
+const config: webpack.Configuration = getWebpackBuildConfig({
+    mode: WebpackRunMode.Production,
+    paths: {
+        entry: path.resolve(__dirname, 'src', 'index.ts'),
+        output: path.resolve(__dirname, 'build'),
+        html: path.resolve(__dirname, 'public', 'index.html')
+    }
+});
 
 export default config;

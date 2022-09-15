@@ -1,10 +1,10 @@
 import webpack from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
-import path from "path";
+import {WebpackConfigPaths} from "./types";
 
-export const getPlugins = (): webpack.WebpackPluginInstance[] => [
+export const getPlugins = (paths: WebpackConfigPaths): webpack.WebpackPluginInstance[] => [
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
-        template: path.resolve('public', 'index.html')
+        template: paths.html
     }),
 ];
