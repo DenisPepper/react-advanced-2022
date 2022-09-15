@@ -18,3 +18,5 @@ https://webpack.js.org/configuration/configuration-languages/
 2.1 moved plugins array to special config/build/plugins folder
 
 2.2 moved loaders array to special config/build/loaders folder
+
+2.3 moved resolver options to special config/build/rresolver folder
