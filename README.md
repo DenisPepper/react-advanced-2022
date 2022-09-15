@@ -15,4 +15,6 @@ https://webpack.js.org/configuration/configuration-languages/
 
 2. Defragment webpack config
 
-2.1 moved plugins array to special config/build/build-plugins folder
+2.1 moved plugins array to special config/build/plugins folder
+
+2.2 moved loaders array to special config/build/loaders folder
