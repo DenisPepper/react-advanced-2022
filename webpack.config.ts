@@ -1,7 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { getBuildPlugins } from './config/build/build-plugins';
+import { getPlugins } from './config/build/plugins';
 
 const config: webpack.Configuration = {
     mode: 'development',
@@ -11,7 +10,7 @@ const config: webpack.Configuration = {
         path: path.resolve(__dirname, 'build'),
         clean: true,
     },
-    plugins: getBuildPlugins(),
+    plugins: getPlugins(),
     module: {
         rules: [
             {
