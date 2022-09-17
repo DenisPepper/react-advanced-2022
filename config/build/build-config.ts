@@ -6,16 +6,18 @@ import webpack from "webpack";
 import {WebpackConfigOptions} from "./types";
 
 export const buildConfig = (options: WebpackConfigOptions): webpack.Configuration => {
-    const {mode, paths} = options;
-    return {mode,
+    const {mode, paths, devtool} = options;
+    return {
+        mode,
         entry: paths.entry,
         output: {
         filename: '[name].[contenthash].js',
             path: paths.output,
             clean: true,
-    },
-    plugins: buildPlugins(paths),
+        },
+        plugins: buildPlugins(paths),
         module: {rules: buildLoaders(),},
-    resolve: buildResolvers(),
+        resolve: buildResolvers(),
+        devtool,
     }
 };

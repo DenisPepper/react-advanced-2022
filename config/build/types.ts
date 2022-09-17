@@ -9,4 +9,5 @@ export type WebpackConfigPaths = {
 export type WebpackConfigOptions = {
     mode: WebpackRunMode;
     paths: WebpackConfigPaths;
+    devtool: string;
 };
