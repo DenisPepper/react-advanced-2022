@@ -8,6 +8,7 @@ enum WebpackRunMode {
 };
 
 const DEVTOOL_OPTION = 'eval-source-map';
+const DEV_SERVER_PORT = 3000;
 
 const config: webpack.Configuration = buildConfig({
     mode: WebpackRunMode.Production,
@@ -17,6 +18,7 @@ const config: webpack.Configuration = buildConfig({
         html: path.resolve(__dirname, 'public', 'index.html')
     },
     devtool: DEVTOOL_OPTION,
+    port: DEV_SERVER_PORT,
 });
 
 export default config;

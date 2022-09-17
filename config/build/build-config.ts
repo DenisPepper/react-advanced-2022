@@ -4,6 +4,7 @@ import {buildLoaders} from "./build-loaders";
 import {buildResolvers} from "./build-resolvers";
 import webpack from "webpack";
 import {WebpackConfigOptions} from "./types";
+import {buildDevServer} from "./build-dev-server";
 
 export const buildConfig = (options: WebpackConfigOptions): webpack.Configuration => {
     const {mode, paths, devtool} = options;
@@ -19,5 +20,6 @@ export const buildConfig = (options: WebpackConfigOptions): webpack.Configuratio
         module: {rules: buildLoaders(),},
         resolve: buildResolvers(),
         devtool,
+        devServer: buildDevServer(options),
     }
 };
