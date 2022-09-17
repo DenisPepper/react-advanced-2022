@@ -20,3 +20,9 @@ https://webpack.js.org/configuration/configuration-languages/
 2.2 moved loaders array to special config/build/loaders folder
 
 2.3 moved resolver options to special config/build/rresolver folder
+
+3. React
+
+3.1 npm i react@17.0.2 react-dom@17.0.2
+
+3.2 npm i -D @types/react@17.0.39 @types/react-dom@17.0.11

@@ -10,7 +10,7 @@ const DEV_SERVER_PORT = 3000;
 const config = (env: WebpackEnvOptions): webpack.Configuration => buildConfig({
     mode: env.mode || DEFAULT_MODE,
     paths: {
-        entry: path.resolve(__dirname, 'src', 'index.ts'),
+        entry: path.resolve(__dirname, 'src', 'index.tsx'),
         output: path.resolve(__dirname, 'build'),
         html: path.resolve(__dirname, 'public', 'index.html')
     },
