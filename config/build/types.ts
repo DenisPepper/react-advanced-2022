@@ -12,3 +12,8 @@ export type WebpackConfigOptions = {
     devtool: string;
     port: number;
 };
+
+export type WebpackEnvOptions ={
+    mode: WebpackRunMode;
+    port: number
+};
