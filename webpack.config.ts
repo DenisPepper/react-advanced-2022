@@ -1,7 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import {buildConfig} from "./config/build/build-config";
-import {WebpackEnvOptions} from "./config/build/types";
+import {WebpackEnvOptions} from "./config/build/config-build-types";
 
 const DEFAULT_MODE = 'development';
 const DEVTOOL_OPTION = 'eval-source-map';
