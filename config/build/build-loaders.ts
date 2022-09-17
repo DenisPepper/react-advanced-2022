@@ -6,6 +6,6 @@ const typescriptLoader = {
     exclude: /node_modules/,
 };
 
-export const getLoaders = (): webpack.RuleSetRule[] => [
+export const buildLoaders = (): webpack.RuleSetRule[] => [
     typescriptLoader,
 ];

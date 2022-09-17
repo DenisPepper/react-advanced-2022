@@ -1,13 +1,13 @@
 import path from 'path';
 import webpack from 'webpack';
-import {getWebpackBuildConfig} from "./config/build/build-config";
+import {buildConfig} from "./config/build/build-config";
 
 enum WebpackRunMode {
     Production = 'production',
     Development = 'development'
 };
 
-const config: webpack.Configuration = getWebpackBuildConfig({
+const config: webpack.Configuration = buildConfig({
     mode: WebpackRunMode.Production,
     paths: {
         entry: path.resolve(__dirname, 'src', 'index.ts'),

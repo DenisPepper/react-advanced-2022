@@ -1,11 +1,11 @@
 import path from "path";
-import {getPlugins} from "./plugins";
-import {getLoaders} from "./loaders";
-import {getResolvers} from "./resolvers";
+import {buildPlugins} from "./build-plugins";
+import {buildLoaders} from "./build-loaders";
+import {buildResolvers} from "./build-resolvers";
 import webpack from "webpack";
 import {WebpackConfigOptions} from "./types";
 
-export const getWebpackBuildConfig = (options: WebpackConfigOptions): webpack.Configuration => {
+export const buildConfig = (options: WebpackConfigOptions): webpack.Configuration => {
     const {mode, paths} = options;
     return {mode,
         entry: paths.entry,
@@ -14,8 +14,8 @@ export const getWebpackBuildConfig = (options: WebpackConfigOptions): webpack.Co
             path: paths.output,
             clean: true,
     },
-    plugins: getPlugins(paths),
-        module: {rules: getLoaders(),},
-    resolve: getResolvers(),
+    plugins: buildPlugins(paths),
+        module: {rules: buildLoaders(),},
+    resolve: buildResolvers(),
     }
 };
