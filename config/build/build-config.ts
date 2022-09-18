@@ -6,11 +6,8 @@ import webpack from "webpack";
 import {WebpackConfigOptions, WebpackRunMode} from "./config-build-types";
 import {buildDevServer} from "./build-dev-server";
 
-const isDev = (mode: WebpackRunMode) => mode === 'development';
-
 export const buildConfig = (options: WebpackConfigOptions): webpack.Configuration => {
-    const {mode, paths, devtool} = options;
-    const devMode = isDev(mode);
+    const {mode, paths, devtool, devMode} = options;
     return {
         mode,
         entry: paths.entry,

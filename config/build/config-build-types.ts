@@ -11,6 +11,7 @@ export type WebpackConfigOptions = {
     paths: WebpackConfigPaths;
     devtool: string;
     port: number;
+    devMode: boolean;
 };
 
 export type WebpackEnvOptions ={
