@@ -1,5 +1,5 @@
 import {Fragment, useState} from "react";
-import './counnter.scss';
+import classes from './counter.module.scss';
 
 export const Counter = (): JSX.Element => {
     const [count, setCount] = useState(0);
