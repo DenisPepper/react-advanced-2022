@@ -1,5 +1,5 @@
 import { render } from 'react-dom';
-import { App } from "./components/app";
+import { App } from "./app";
 
 const root = document.getElementById('root') as HTMLElement;
 
