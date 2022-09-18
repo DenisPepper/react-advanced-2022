@@ -8,6 +8,6 @@ export const Counter = (): JSX.Element => {
     return(
         <Fragment>
             <h1>{ count } </h1>
-            <button onClick={onButtonClick}>increment</button>
+            <button onClick={onButtonClick} className={classes.btn}>increment</button>
         </Fragment>);
 };
