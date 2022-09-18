@@ -17,7 +17,7 @@ export const buildConfig = (options: WebpackConfigOptions): webpack.Configuratio
             clean: true,
         },
         plugins: buildPlugins(paths),
-        module: {rules: buildLoaders(),},
+        module: {rules: buildLoaders(options),},
         resolve: buildResolvers(),
         devtool: devMode ? devtool : undefined,
         devServer: devMode ? buildDevServer(options) : undefined,
