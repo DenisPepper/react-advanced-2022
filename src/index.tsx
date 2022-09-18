@@ -1,9 +1,8 @@
 import { render } from 'react-dom';
-import { Counter } from "./components/counter";
+import { App } from "./components/app";
 
 const root = document.getElementById('root') as HTMLElement;
 
 render(
-    <Counter />,
- root
+    <App />, root
 );
