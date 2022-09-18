@@ -1,10 +1,11 @@
-import {Fragment, useState} from "react";
 import { Counter } from './counter';
+
 
 export const App = (): JSX.Element => {
 
     return(
-        <Fragment>
+        <div className='app'>
+           app component
             <Counter/>
-        </Fragment>);
+        </div>);
 };

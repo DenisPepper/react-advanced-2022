@@ -16,7 +16,12 @@ export const buildLoaders = ({devMode}: WebpackConfigOptions): webpack.RuleSetRu
             devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
             {   loader: "css-loader",
                 options: {
-                    modules: true,
+                    modules: {
+                    auto: (resPath: string) => Boolean(resPath.includes('.module.')),
+                    localIdentName: devMode
+                        ? '[path][name]__[local]'
+                        : '[hash:base64:8]'
+                    }
                 },
             },
             "sass-loader",
