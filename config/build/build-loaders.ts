@@ -1,4 +1,5 @@
 import webpack from "webpack";
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 const typescriptLoader = {
     test: /\.tsx?$/,
@@ -9,11 +10,8 @@ const typescriptLoader = {
 const sassLoader = {
     test: /\.s[ac]ss$/i,
     use: [
-        // Creates `style` nodes from JS strings
-        "style-loader",
-        // Translates CSS into CommonJS
+        MiniCssExtractPlugin.loader,
         "css-loader",
-        // Compiles Sass to CSS
         "sass-loader",
     ],
 }
