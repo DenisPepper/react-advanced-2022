@@ -16,7 +16,7 @@ const config = (env: WebpackEnvOptions): webpack.Configuration => buildConfig({
     },
     devtool: DEVTOOL_OPTION,
     port: env.port || DEV_SERVER_PORT,
-    devMode: env.mode === DEFAULT_MODE
+    devMode: env.mode !== 'production'
 });
 
 export default config;
