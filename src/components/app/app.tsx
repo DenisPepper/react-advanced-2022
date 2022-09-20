@@ -6,12 +6,13 @@ import {MainPageAsync} from "../../pages/main-page/main-page-async";
 import {AboutPageAsync} from "../../pages/about-page/about-page-async";
 import {Suspense} from "react";
 import {useTheme} from "../../theme/use-theme";
+import {classNames} from "../../utils/class-names";
 
 export default function App(): JSX.Element {
     const {theme, toggleTheme} = useTheme();
 
     return(
-        <div className={`app ${theme}`}>
+        <div className={classNames(['app', theme], {})}>
             <button onClick = {toggleTheme}>switch theme</button>
             <Link to={AppPath.MainPage}> MAIN PAGE </Link>
             <Link to={AppPath.AboutPage}> ABOUT PAGE </Link>
