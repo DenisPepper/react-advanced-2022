@@ -26,3 +26,6 @@ https://webpack.js.org/configuration/configuration-languages/
 3.1 npm i react@17.0.2 react-dom@17.0.2
 
 3.2 npm i -D @types/react@17.0.39 @types/react-dom@17.0.11
+
+
+end mod 2 -> start mod 3
