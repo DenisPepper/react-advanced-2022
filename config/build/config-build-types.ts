@@ -4,7 +4,7 @@ export type WebpackConfigPaths = {
     entry: string;
     output: string;
     html: string;
-    src: string;
+    src: string
 };
 
 export type WebpackConfigOptions = {

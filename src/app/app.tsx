@@ -1,16 +1,15 @@
-import './styles/index.scss';
-import {Link, Route, Routes} from 'react-router-dom';
-import {AppPath} from "../settings";
-import Page404 from "../pages/404-page/404-page";
-import {MainPageAsync} from "../pages/main-page/main-page-async";
-import {AboutPageAsync} from "../pages/about-page/about-page-async";
 import {Suspense} from "react";
-import {useTheme} from "./providers/theme-provider/lib/use-theme";
-import {classNames} from "../utils/class-names";
+import {Link, Route, Routes} from 'react-router-dom';
+import './styles/index.scss';
+import {AppPath} from "settings";
+import {useTheme} from "app/providers/theme-provider";
+import {classNames} from "shared/lib/class-names";
+import { MainPage } from "pages/main-page";
+import { AboutPage } from 'pages/about-page';
+import { Page404 } from "pages/404-page";
 
 export default function App(): JSX.Element {
     const {theme, toggleTheme} = useTheme();
-
     return(
         <div className={classNames(['app', theme], {})}>
             <button onClick = {toggleTheme}>switch theme</button>
@@ -19,9 +18,9 @@ export default function App(): JSX.Element {
             <Suspense fallback={<div>Loading ...</div>}>
                 <Routes>
                     <Route path={AppPath.MainPage}>
-                        <Route index element = {<MainPageAsync />} />
-                        <Route path = {AppPath.AboutPage} element = {<AboutPageAsync />} />
-                        <Route path = {AppPath.Page404} element={<Page404 />}/>
+                        <Route index element = {<MainPage />} />
+                        <Route path = {AppPath.AboutPage} element = {<AboutPage />} />
+                        <Route path = {AppPath.Page404} element={<Page404 />} />
                     </Route>
                 </Routes>
             </Suspense>

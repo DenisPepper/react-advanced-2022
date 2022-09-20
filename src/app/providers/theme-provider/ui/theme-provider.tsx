@@ -6,7 +6,7 @@ type ThemeProviderProps = {
     children: JSX.Element;
 };
 
-export default function ThemeProvider(props : ThemeProviderProps): JSX.Element {
+export function ThemeProvider(props : ThemeProviderProps): JSX.Element {
     const {children} = props;
     const currentTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as AppTheme || DEFAULT_APP_THEME;
     const [theme, setTheme] = useState<AppTheme>(currentTheme);

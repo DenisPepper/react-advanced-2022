@@ -3,7 +3,7 @@ import {buildPlugins} from "./build-plugins";
 import {buildLoaders} from "./build-loaders";
 import {buildResolvers} from "./build-resolvers";
 import webpack from "webpack";
-import {WebpackConfigOptions, WebpackRunMode} from "./config-build-types";
+import {WebpackConfigOptions} from "./config-build-types";
 import {buildDevServer} from "./build-dev-server";
 
 export const buildConfig = (options: WebpackConfigOptions): webpack.Configuration => {
