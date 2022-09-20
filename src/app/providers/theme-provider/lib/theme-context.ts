@@ -1,5 +1,5 @@
 import {createContext} from "react";
-import {AppTheme} from "../settings";
+import {AppTheme} from "../../../../settings";
 
 export type ThemeContextProps = {
     theme: AppTheme;

@@ -1,6 +1,6 @@
-import {ThemeContext} from "./theme-context";
+import {ThemeContext} from "../lib/theme-context";
 import {FC, useMemo, useState} from "react";
-import {AppTheme, DEFAULT_APP_THEME, LOCAL_STORAGE_THEME_KEY} from "../settings";
+import {AppTheme, DEFAULT_APP_THEME, LOCAL_STORAGE_THEME_KEY} from "../../../../settings";
 
 type ThemeProviderProps = {
     children: JSX.Element;

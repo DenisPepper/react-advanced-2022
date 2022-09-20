@@ -1,4 +1,4 @@
-import {AppTheme, LOCAL_STORAGE_THEME_KEY} from "../settings";
+import {AppTheme, LOCAL_STORAGE_THEME_KEY} from "../../../../settings";
 import {useContext} from "react";
 import {ThemeContext} from "./theme-context";
 
