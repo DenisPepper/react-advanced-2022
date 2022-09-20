@@ -12,7 +12,8 @@ const config = (env: WebpackEnvOptions): webpack.Configuration => buildConfig({
     paths: {
         entry: path.resolve(__dirname, 'src', 'index.tsx'),
         output: path.resolve(__dirname, 'build'),
-        html: path.resolve(__dirname, 'public', 'index.html')
+        html: path.resolve(__dirname, 'public', 'index.html'),
+        src: path.resolve(__dirname, 'src')
     },
     devtool: DEVTOOL_OPTION,
     port: env.port || DEV_SERVER_PORT,
