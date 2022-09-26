@@ -5,10 +5,9 @@ import {AppRouter} from "app/providers/router";
 import {Navbar} from "widgets/navbar";
 
 export default function App(): JSX.Element {
-    const {theme, toggleTheme} = useTheme();
+    const {theme} = useTheme();
     return(
         <div className={buildNames(['app', theme], {})}>
-            <button onClick = {toggleTheme}>switch theme</button>
             <Navbar />
             <AppRouter />
         </div>
