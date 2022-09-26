@@ -1,29 +1,20 @@
-import {Suspense} from "react";
-import {Link, Route, Routes} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import './styles/index.scss';
-import {AppPath} from "settings";
 import {useTheme} from "app/providers/theme-provider";
 import {getClassNames} from "shared/lib/get-class-names";
-import { MainPage } from "pages/main-page";
-import { AboutPage } from 'pages/about-page';
-import { Page404 } from "pages/404-page";
+import {AppRouter} from "app/providers/router";
+import {AppRoutes} from "shared/config/app-routes-config";
+
+
 
 export default function App(): JSX.Element {
     const {theme, toggleTheme} = useTheme();
     return(
         <div className={getClassNames(['app', theme], {})}>
             <button onClick = {toggleTheme}>switch theme</button>
-            <Link to={AppPath.MainPage}> MAIN PAGE </Link>
-            <Link to={AppPath.AboutPage}> ABOUT PAGE </Link>
-            <Suspense fallback={<div>Loading ...</div>}>
-                <Routes>
-                    <Route path={AppPath.MainPage}>
-                        <Route index element = {<MainPage />} />
-                        <Route path = {AppPath.AboutPage} element = {<AboutPage />} />
-                        <Route path = {AppPath.Page404} element={<Page404 />} />
-                    </Route>
-                </Routes>
-            </Suspense>
+            <Link to={AppRoutes.main}> MAIN PAGE </Link>
+            <Link to={AppRoutes.about}> ABOUT PAGE </Link>
+            <AppRouter />
         </div>
     );
 };

@@ -1,8 +1,3 @@
-export const enum AppPath {
-    MainPage = '/',
-    AboutPage = '/about',
-    Page404 = '*',
-}
 
 export const enum AppTheme {
     Light = 'light',
