@@ -28,5 +28,10 @@ export const buildLoaders = ({devMode}: WebpackConfigOptions): webpack.RuleSetRu
         ],
     }
 
-    return [typescriptLoader, sassLoader]
+    const svgLoader = {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+    }
+
+    return [typescriptLoader, sassLoader, svgLoader]
 };
