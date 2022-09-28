@@ -16,7 +16,7 @@ export function AppButton(props: AppButtonProps): JSX.Element {
 
     return (
         <button
-            className={buildNames([cls[theme], cls.app_button])}
+            className={buildNames([cls[theme], cls.app_button, className])}
             {...restProps}
         >
             {children}
