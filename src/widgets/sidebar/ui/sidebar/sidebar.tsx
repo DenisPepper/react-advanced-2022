@@ -1,4 +1,4 @@
-import { buildNames } from 'shared/lib/build-css-class-names';
+import { buildNames } from 'shared/lib/build-css-class-names/build-css-class-names';
 import { useState } from 'react';
 import { ThemesSwitcher } from 'shared/ui/themes-switcher';
 import { LangSwitcher } from 'shared/ui/lang-switcher';

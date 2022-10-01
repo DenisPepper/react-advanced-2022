@@ -1,4 +1,4 @@
-import { buildNames } from 'shared/lib/build-css-class-names';
+import { buildNames } from 'shared/lib/build-css-class-names/build-css-class-names';
 import { ButtonHTMLAttributes } from 'react';
 import cls from './app-button.module.scss';
 

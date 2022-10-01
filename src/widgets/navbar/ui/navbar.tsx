@@ -1,5 +1,5 @@
 import { AppRoutes } from 'shared/config/app-routes-config';
-import { buildNames } from 'shared/lib/build-css-class-names';
+import { buildNames } from 'shared/lib/build-css-class-names/build-css-class-names';
 import { AppLink, AppLinkThemes } from 'shared/ui/app-link/app-link';
 import { useTranslation } from 'react-i18next';
 import cls from './navbar.module.scss';

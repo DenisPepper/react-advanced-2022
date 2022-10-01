@@ -1,4 +1,4 @@
-import { buildNames } from 'shared/lib/build-css-class-names';
+import { buildNames } from 'shared/lib/build-css-class-names/build-css-class-names';
 import { useTheme } from 'app/providers/theme-provider';
 import DarkIcon from 'shared/assets/icons/theme-dark.svg';
 import LightIcon from 'shared/assets/icons/theme-light.svg';

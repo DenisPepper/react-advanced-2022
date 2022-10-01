@@ -1,6 +1,6 @@
-import {buildNames} from "shared/lib/build-css-class-names";
+import { buildNames } from 'shared/lib/build-css-class-names/build-css-class-names';
+import { Link, LinkProps } from 'react-router-dom';
 import cls from './app-link.module.scss';
-import {Link, LinkProps} from "react-router-dom";
 
 export const enum AppLinkThemes {
     Primary = 'primary',
@@ -23,12 +23,12 @@ export function AppLink(props: AppLinkProps) {
     } = props;
 
     return (
-       <Link
-           to={path}
-           className={buildNames([className, cls[theme], cls.app_link])}
-           {...restProps}
-       >
-           {children}
-       </Link>
+        <Link
+            to={path}
+            className={buildNames([className, cls[theme], cls.app_link])}
+            {...restProps}
+        >
+            {children}
+        </Link>
     );
 }
