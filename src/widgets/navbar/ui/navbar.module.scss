@@ -1,21 +1,16 @@
-@import 'app/styles/themes/normal.scss';
-@import "app/styles/themes/dark.scss";
-@import "app/styles/variables/global.scss";
-
-
 .navbar {
-  width: 100%;
-  height: var(--navbar-height);
-  background-color: var(--navbar-bg-color);
-  display: flex;
-  align-items: center;
-  padding: 20px;
+    width: 100%;
+    height: var(--navbar-height);
+    background-color: var(--navbar-bg-color);
+    display: flex;
+    align-items: center;
+    padding: 20px;
 }
 
 .links {
-  margin-left: auto;
+    margin-left: auto;
 }
 
 .main_link {
-  margin-right: 15px;
+    margin-right: 15px;
 }
