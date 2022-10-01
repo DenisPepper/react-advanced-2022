@@ -10,7 +10,7 @@ i18n
     .use(initReactI18next)
     .init({
         fallbackLng: 'ru',
-        lng: 'ru', //when restart page - this option will always switch app to selected language
+        lng: 'ru', // when restart page - this option will always switch app to selected language
         debug: __IS_DEV__,
 
         interpolation: {
@@ -19,8 +19,7 @@ i18n
 
         backend: {
             loadPath: '/locales/{{lng}}/{{ns}}.json',
-        }
+        },
     });
-
 
 export default i18n;

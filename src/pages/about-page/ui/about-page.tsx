@@ -1,11 +1,11 @@
-import {useTranslation} from "react-i18next";
+import { useTranslation } from 'react-i18next';
 
-export default function AboutPage(): JSX.Element  {
-    const {t} = useTranslation('about-page');
+export default function AboutPage(): JSX.Element {
+    const { t } = useTranslation('about-page');
 
     return (
         <div>
-            {t("О сайте")}
+            {t('О сайте')}
         </div>
     );
 }

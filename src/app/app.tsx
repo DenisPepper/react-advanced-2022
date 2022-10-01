@@ -1,19 +1,16 @@
 import './styles/index.scss';
-import {useTheme} from "app/providers/theme-provider";
-import {buildNames} from "shared/lib/build-css-class-names";
-import {AppRouter} from "app/providers/router";
-import {Navbar} from "widgets/navbar";
-import {Sidebar} from "widgets/sidebar";
-import {Suspense} from "react";
-import {useTranslation} from "react-i18next";
-
-
+import { useTheme } from 'app/providers/theme-provider';
+import { buildNames } from 'shared/lib/build-css-class-names';
+import { AppRouter } from 'app/providers/router';
+import { Navbar } from 'widgets/navbar';
+import { Sidebar } from 'widgets/sidebar';
+import { Suspense } from 'react';
 
 export default function App(): JSX.Element {
-    const {theme} = useTheme();
-    return(
+    const { theme } = useTheme();
+    return (
         <div className={buildNames(['app', theme], {})}>
-            <Suspense fallback=''>
+            <Suspense fallback="">
                 <Navbar />
                 <div className="content-page">
                     <Sidebar />
@@ -22,4 +19,4 @@ export default function App(): JSX.Element {
             </Suspense>
         </div>
     );
-};
+}

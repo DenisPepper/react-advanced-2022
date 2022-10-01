@@ -1,5 +1,5 @@
-import {WebpackConfigOptions} from "./config-build-types";
-import type { Configuration as DevServerConfiguration} from 'webpack-dev-server';
+import type { Configuration as DevServerConfiguration } from 'webpack-dev-server';
+import { WebpackConfigOptions } from './config-build-types';
 
 export const buildDevServer = (options: WebpackConfigOptions): DevServerConfiguration => {
     const { port } = options;
@@ -7,6 +7,6 @@ export const buildDevServer = (options: WebpackConfigOptions): DevServerConfigur
         port,
         open: true,
         hot: true,
-        historyApiFallback: true
+        historyApiFallback: true,
     };
 };

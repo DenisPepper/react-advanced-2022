@@ -1,7 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
-import {buildConfig} from "./config/build/build-config";
-import {WebpackEnvOptions} from "./config/build/config-build-types";
+import { buildConfig } from './config/build/build-config';
+import { WebpackEnvOptions } from './config/build/config-build-types';
 
 const DEFAULT_MODE = 'development';
 const DEVTOOL_OPTION = 'eval-source-map';
@@ -17,7 +17,7 @@ const config = (env: WebpackEnvOptions): webpack.Configuration => buildConfig({
     },
     devtool: DEVTOOL_OPTION,
     port: env.port || DEV_SERVER_PORT,
-    devMode: env.mode !== 'production'
+    devMode: env.mode !== 'production',
 });
 
 export default config;

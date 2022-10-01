@@ -1,3 +1,3 @@
-import {lazy} from "react";
+import { lazy } from 'react';
 
-export const Page404Async = lazy(() => import('./404-page'))
+export const Page404Async = lazy(() => import('./404-page'));
