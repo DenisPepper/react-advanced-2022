@@ -15,7 +15,7 @@ export function Sidebar():JSX.Element {
 
     return (
         <div className={buildNames([cls.sidebar], { [cls.cuddled]: cuddled })}>
-            <button type="button" onClick={onToggle}>{t('Переключатель')}</button>
+            <button type="button" onClick={onToggle}>{t('Прижать')}</button>
             <div className={buildNames([cls.switchers])}>
                 <ThemesSwitcher />
                 <LangSwitcher className={cls.lang} />
