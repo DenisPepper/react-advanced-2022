@@ -1,8 +1,8 @@
 import { render } from 'react-dom';
-import {BrowserRouter} from "react-router-dom";
-import App  from "app/app";
-import { ThemeProvider } from "app/providers/theme-provider";
-import "./shared/config/i18n-config";
+import { BrowserRouter } from 'react-router-dom';
+import App from 'app/app';
+import { ThemeProvider } from 'app/providers/theme-provider';
+import './shared/config/i18n-config';
 
 const root = document.getElementById('root') as HTMLElement;
 
@@ -12,5 +12,5 @@ render(
             <App />
         </ThemeProvider>
     </BrowserRouter>,
-    root
+    root,
 );
