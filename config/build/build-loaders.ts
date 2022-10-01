@@ -3,6 +3,17 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { WebpackConfigOptions } from './config-build-types';
 
 export const buildLoaders = ({ devMode }: WebpackConfigOptions): webpack.RuleSetRule[] => {
+    const babelLoader = {
+        test: /\.(js|jsx|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+            loader: 'babel-loader',
+            options: {
+                presets: ['@babel/preset-env'],
+            },
+        },
+    };
+
     const typescriptLoader = {
         test: /\.tsx?$/,
         use: 'ts-loader',
@@ -42,5 +53,5 @@ export const buildLoaders = ({ devMode }: WebpackConfigOptions): webpack.RuleSet
         ],
     };
 
-    return [svgLoader, fileLoader, typescriptLoader, sassLoader];
+    return [fileLoader, svgLoader, babelLoader, typescriptLoader, sassLoader];
 };
