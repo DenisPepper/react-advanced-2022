@@ -8,8 +8,10 @@
     "build-prod": "webpack --mode production",
     "build-dev": "webpack --mode development",
     "start": "webpack serve --env port=3000",
-    "eslint": "eslint \"**/*.{ts, tsx}\"",
-    "eslint-fix": "eslint \"**/*.{ts, tsx}\" --fix"
+    "eslint-ts": "eslint \"**/*.{ts, tsx}\"",
+    "eslint-ts-fix": "eslint \"**/*.{ts, tsx}\" --fix",
+    "eslint-scss": "npx stylelint \"**/*.scss\"",
+    "eslint-scss-fix": "npx stylelint \"**/*.scss\" --fix"
   },
   "repository": {
     "type": "git",
@@ -45,6 +47,8 @@
     "sass": "1.49.9",
     "sass-loader": "12.6.0",
     "style-loader": "3.3.1",
+    "stylelint": "14.5.3",
+    "stylelint-config-standard-scss": "3.0.0",
     "ts-loader": "9.2.6",
     "ts-node": "10.5.0",
     "typescript": "4.5.5",
