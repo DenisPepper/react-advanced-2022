@@ -1,6 +1,7 @@
 import { AppRoutes } from 'shared/config/app-routes-config';
 import { buildNames } from 'shared/lib/build-css-class-names';
 import { AppLink, AppLinkThemes } from 'shared/ui/app-link/app-link';
+import { useTranslation } from 'react-i18next';
 import cls from './navbar.module.scss';
 
 type NavbarProps = {
@@ -9,6 +10,7 @@ type NavbarProps = {
 
 export function Navbar(props: NavbarProps): JSX.Element {
     const { className } = props;
+    const { t } = useTranslation();
 
     return (
         <div className={buildNames([cls.navbar, className])}>
@@ -18,9 +20,14 @@ export function Navbar(props: NavbarProps): JSX.Element {
                     className={cls.main_link}
                     theme={AppLinkThemes.Secondary}
                 >
-                    Главная
+                    {t('Главная')}
                 </AppLink>
-                <AppLink to={AppRoutes.about} theme={AppLinkThemes.Secondary}>О сайте</AppLink>
+                <AppLink
+                    to={AppRoutes.about}
+                    theme={AppLinkThemes.Secondary}
+                >
+                    {t('О сайте')}
+                </AppLink>
             </div>
         </div>
     );
