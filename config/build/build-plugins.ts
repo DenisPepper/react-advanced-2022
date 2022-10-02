@@ -5,18 +5,31 @@ import { WebpackConfigOptions } from './config-build-types';
 
 export const buildPlugins = (options: WebpackConfigOptions): webpack.WebpackPluginInstance[] => {
     const { paths, devMode } = options;
-    return [
-        new webpack.ProgressPlugin(),
-        new HtmlWebpackPlugin({
-            template: paths.html,
-        }),
-        new MiniCssExtractPlugin({
-            filename: 'css/[name].[contenthash:8].css',
-            chunkFilename: 'css/[name].[contenthash:8].css',
-        }),
-        new webpack.DefinePlugin({
-            __IS_DEV__: JSON.stringify(devMode),
-        }),
-        new webpack.HotModuleReplacementPlugin(),
-    ];
+
+    const progressPlugin = new webpack.ProgressPlugin();
+
+    const htmlWebpackPlugin = new HtmlWebpackPlugin({
+        template: paths.html,
+    });
+
+    const miniCssExtractPlugin = new MiniCssExtractPlugin({
+        filename: 'css/[name].[contenthash:8].css',
+        chunkFilename: 'css/[name].[contenthash:8].css',
+    });
+
+    const definePlugin = new webpack.DefinePlugin({
+        __IS_DEV__: JSON.stringify(devMode),
+    });
+
+    const hotModuleReplacementPlugin = new webpack.HotModuleReplacementPlugin();
+
+    const plugins = [htmlWebpackPlugin, progressPlugin, definePlugin];
+
+    if (devMode) {
+        plugins.push(hotModuleReplacementPlugin);
+    } else {
+        plugins.push(miniCssExtractPlugin);
+    }
+
+    return plugins;
 };
