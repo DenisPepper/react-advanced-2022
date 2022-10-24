@@ -1,4 +1,4 @@
-import { buildNames } from './build-css-class-names';
+import { buildNames } from 'shared/lib/build-css-class-names/build-css-class-names';
 
 describe('buildNames test', () => {
     test('with argument -names', () => {
