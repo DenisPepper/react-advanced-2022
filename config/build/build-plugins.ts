@@ -30,9 +30,9 @@ export const buildPlugins = (options: WebpackConfigOptions): webpack.WebpackPlug
 
     if (devMode) {
         plugins.push(hotModuleReplacementPlugin);
+        plugins.push(bundleAnalyzerPlugin);
     } else {
         plugins.push(miniCssExtractPlugin);
-        plugins.push(bundleAnalyzerPlugin);
     }
 
     return plugins;
