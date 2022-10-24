@@ -19,4 +19,3 @@ export type WebpackEnvOptions ={
     mode: WebpackRunMode;
     port: number
 };
-// TODO rename this module as build-types-config

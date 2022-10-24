@@ -1,5 +1,5 @@
 import webpack from 'webpack';
-import { WebpackConfigOptions } from './config-build-types';
+import { WebpackConfigOptions } from './build-config-types';
 
 export const buildResolvers = (options: WebpackConfigOptions): webpack.ResolveOptions => ({
     extensions: ['.tsx', '.ts', '.js'],

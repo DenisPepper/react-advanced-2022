@@ -1,6 +1,6 @@
 import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { WebpackConfigOptions } from './config-build-types';
+import { WebpackConfigOptions } from './build-config-types';
 
 export const buildLoaders = ({ devMode }: WebpackConfigOptions): webpack.RuleSetRule[] => {
     const babelLoader = {
