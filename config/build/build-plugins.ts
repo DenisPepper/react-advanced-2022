@@ -1,7 +1,8 @@
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { WebpackConfigOptions } from './config-build-types';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import { WebpackConfigOptions } from './build-config-types';
 
 export const buildPlugins = (options: WebpackConfigOptions): webpack.WebpackPluginInstance[] => {
     const { paths, devMode } = options;
@@ -23,12 +24,15 @@ export const buildPlugins = (options: WebpackConfigOptions): webpack.WebpackPlug
 
     const hotModuleReplacementPlugin = new webpack.HotModuleReplacementPlugin();
 
+    const bundleAnalyzerPlugin = new BundleAnalyzerPlugin({ openAnalyzer: false });
+
     const plugins = [htmlWebpackPlugin, progressPlugin, definePlugin];
 
     if (devMode) {
         plugins.push(hotModuleReplacementPlugin);
     } else {
         plugins.push(miniCssExtractPlugin);
+        plugins.push(bundleAnalyzerPlugin);
     }
 
     return plugins;
