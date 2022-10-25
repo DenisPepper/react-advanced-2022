@@ -4,10 +4,11 @@ import { buildNames } from 'shared/lib/build-css-class-names/build-css-class-nam
 
 type LangSwitcherProps = {
     className?: string;
+    shortView?: boolean;
 }
 
 export function LangSwitcher(props: LangSwitcherProps): JSX.Element {
-    const { className } = props;
+    const { className, shortView } = props;
     const { t, i18n } = useTranslation();
 
     const onToggle = () => {
@@ -20,7 +21,7 @@ export function LangSwitcher(props: LangSwitcherProps): JSX.Element {
             theme={AppButtonThemes.Clear}
             onClick={onToggle}
         >
-            {t('Язык')}
+            {t(shortView ? 'Короткое обозначение языка' : 'Язык')}
         </AppButton>
     );
 }
