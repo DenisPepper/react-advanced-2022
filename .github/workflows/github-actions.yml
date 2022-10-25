@@ -1,9 +1,9 @@
 name: react-advanced-2022
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 jobs:
   react-advanced-2022-checks:
     runs-on: ubuntu-latest
