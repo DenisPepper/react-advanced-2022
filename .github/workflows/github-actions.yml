@@ -23,14 +23,18 @@ jobs:
       - name: install npm
         run: npm install
 
+        if: always()
       - name: eslint for typescript
         run: npm run eslint-ts
 
+        if: always()
       - name: eslint for css
         run: npm run eslint-scss
 
+        if: always()
       - name: unit testing
         run: npm run test-unit
 
+        if: always()
       - name: project production build
         run: npm run build-prod
