@@ -6,3 +6,5 @@ export const enum AppTheme {
 export const DEFAULT_APP_THEME = AppTheme.Light;
 
 export const LOCAL_STORAGE_THEME_KEY = 'theme';
+
+export const ROOT = document.getElementById('root') as HTMLElement;
