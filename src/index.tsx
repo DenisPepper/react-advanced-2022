@@ -6,14 +6,17 @@ import { ThemeProvider } from 'app/providers/theme-provider';
 import './shared/config/i18n-config';
 import { ErrorProvider } from 'app/providers/error-provider';
 import { ROOT } from 'shared/settings';
+import { StoreProvider } from 'app/providers/store-provider';
 
 render(
-    <BrowserRouter>
-        <ErrorProvider>
-            <ThemeProvider>
-                <App />
-            </ThemeProvider>
-        </ErrorProvider>
-    </BrowserRouter>,
+    <StoreProvider>
+        <BrowserRouter>
+            <ErrorProvider>
+                <ThemeProvider>
+                    <App />
+                </ThemeProvider>
+            </ErrorProvider>
+        </BrowserRouter>
+    </StoreProvider>,
     ROOT,
 );
