@@ -1,6 +1,6 @@
 export const enum AppTheme {
-    Light = 'light',
-    Dark = 'dark'
+    Light = 'app_light_theme',
+    Dark = 'app_dark_theme'
 }
 
 export const DEFAULT_APP_THEME = AppTheme.Light;
