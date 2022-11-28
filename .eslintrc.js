@@ -43,6 +43,7 @@ module.exports = {
         'i18next/no-literal-string': ['error', { markupOnly: true }],
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
+        'react/button-has-type': ['error', { button: true, submit: true, reset: true }],
     },
     globals: {
         __IS_DEV__: true,
