@@ -12,18 +12,21 @@ interface AppPopupProps {
     children?: ReactNode;
     isOpened?: boolean;
     onClose?: () => void;
+    lazy?: boolean;
 }
 
 const DELAY = 300;
 
 export function AppPopup(props: AppPopupProps): JSX.Element {
     const {
-        className, children, isOpened, onClose,
+        className, children, isOpened, onClose, lazy,
     } = props;
 
     const { theme } = useTheme();
 
     const [isClosing, setClosingClassName] = useState(false);
+
+    const [isMounted, setIsMounted] = useState(false);
 
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
@@ -47,6 +50,7 @@ export function AppPopup(props: AppPopupProps): JSX.Element {
         () => {
             if (isOpened) {
                 window.addEventListener('keydown', onEscKeyDown);
+                setIsMounted(true);
             }
             return () => {
                 window.removeEventListener('keydown', onEscKeyDown);
@@ -64,6 +68,10 @@ export function AppPopup(props: AppPopupProps): JSX.Element {
         ['popup', cls.popup, theme, className],
         { [cls.opened]: isOpened, [cls.is_closing]: isClosing },
     );
+
+    if (lazy && !isMounted) {
+        return null;
+    }
 
     return (
         <AppPortal container={ROOT}>
