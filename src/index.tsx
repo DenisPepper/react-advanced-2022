@@ -7,16 +7,19 @@ import './shared/config/i18n-config';
 import { ErrorProvider } from 'app/providers/error-provider';
 import { ROOT } from 'shared/settings';
 import { StoreProvider } from 'app/providers/store-provider';
+import React from 'react';
 
 render(
-    <StoreProvider>
-        <BrowserRouter>
-            <ErrorProvider>
-                <ThemeProvider>
-                    <App />
-                </ThemeProvider>
-            </ErrorProvider>
-        </BrowserRouter>
-    </StoreProvider>,
+    <React.StrictMode>
+        <StoreProvider>
+            <BrowserRouter>
+                <ErrorProvider>
+                    <ThemeProvider>
+                        <App />
+                    </ThemeProvider>
+                </ErrorProvider>
+            </BrowserRouter>
+        </StoreProvider>
+    </React.StrictMode>,
     ROOT,
 );

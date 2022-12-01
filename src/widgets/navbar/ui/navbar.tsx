@@ -27,6 +27,7 @@ export function Navbar(props: NavbarProps): JSX.Element {
     }, []);
 
     const logOut = () => {
+        closePopup();
         dispatch(userActions.logOut());
     };
 

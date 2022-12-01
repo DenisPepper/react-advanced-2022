@@ -55,6 +55,7 @@ export function AppPopup(props: AppPopupProps): JSX.Element {
             return () => {
                 window.removeEventListener('keydown', onEscKeyDown);
                 clearTimeout(timerRef.current);
+                setIsMounted(false);
             };
         },
         [isOpened, onEscKeyDown],
