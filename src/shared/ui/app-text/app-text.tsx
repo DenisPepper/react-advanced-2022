@@ -3,7 +3,6 @@ import cls from './app-text.module.scss';
 import background from '../../assets/icons/user-32-32.png';
 
 export const enum TextTheme {
-    Casual = 'casual',
     Error = 'error'
 }
 
@@ -16,12 +15,12 @@ interface AppTextProps {
 
 export function AppText(props: AppTextProps): JSX.Element {
     const {
-        className, header, textContent, theme = TextTheme.Casual,
+        className, header, textContent, theme = null,
     } = props;
 
     return (
         <div
-            className={buildNames([cls.app_text, theme, className])}
+            className={buildNames([cls.app_text, cls[theme], className])}
             // style={{ backgroundImage: `url(${background})` }}
         >
             {header
