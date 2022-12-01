@@ -1,4 +1,4 @@
-export { counterReducer } from './model/slice/counter-slice';
+export { counterReducer, counterActions } from './model/slice/counter-slice';
 
 export { Counter } from './ui/counter';
 

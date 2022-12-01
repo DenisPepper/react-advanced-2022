@@ -1,0 +1,23 @@
+.app_text {
+    color: #105e10;
+}
+
+.header {
+    font-size: var(--font-l);
+    color: var(--primary-color);
+}
+
+.textContent {
+    font-size: var(--font-m);
+    color: var(--secondary-color);
+}
+
+.error {
+    .header {
+        color: var(--error-dark-color);
+    }
+
+    .textContent {
+        color: var(--error-light-color);
+    }
+}

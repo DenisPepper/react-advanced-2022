@@ -10,5 +10,7 @@
   "Страница не найдена": "Page not found",
   "Войти": "Sign in",
   "имя пользователя": "user name",
-  "пароль": "password"
+  "пароль": "password",
+  "неверный логин или пароль": "invalid user name or password",
+  "Выйти": "Sign out"
 }
