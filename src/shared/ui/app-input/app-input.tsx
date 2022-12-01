@@ -1,15 +1,17 @@
 import { buildNames } from 'shared/lib/build-css-class-names/build-css-class-names';
 import React, { InputHTMLAttributes } from 'react';
 
-type AppInputProps = {
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
+
+interface AppInputProps extends HTMLInputProps{
     classNames?: string,
     value?: string,
     type: 'text' | 'password',
     placeholder?: string,
     onChange?:(value: string) => void,
-} & InputHTMLAttributes<HTMLInputElement>
+}
 
-export function AppInput(props: AppInputProps): JSX.Element {
+function AppInput(props: AppInputProps): JSX.Element {
     const {
         classNames, value, type, placeholder, onChange, ...restProps
     } = props;
@@ -29,3 +31,5 @@ export function AppInput(props: AppInputProps): JSX.Element {
         />
     );
 }
+
+export default React.memo(AppInput);
